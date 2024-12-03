@@ -76,7 +76,7 @@ class _OrderManagementPageState extends State<OrderManagementPage> {
               'lib/images/mcd_logo.png',
               height: 40,
             ),
-            const SizedBox(width: 15), // Add spacing between the image and text
+            const SizedBox(width: 15),
             Text(
               'McDonald\'s',
               style: TextStyle(
@@ -135,7 +135,7 @@ class _OrderManagementPageState extends State<OrderManagementPage> {
                                 style: ElevatedButton.styleFrom(
                                   padding: const EdgeInsets.all(8.0),
                                   minimumSize: const Size(36, 36),
-                                  shape: const CircleBorder(), // Makes the button circular
+                                  shape: const CircleBorder(), 
                                 ),
                                 child: const Icon(Icons.add, size: 20),
                               ),
@@ -145,7 +145,7 @@ class _OrderManagementPageState extends State<OrderManagementPage> {
                                 style: ElevatedButton.styleFrom(
                                   padding: const EdgeInsets.all(8.0),
                                   minimumSize: const Size(36, 36),
-                                  shape: const CircleBorder(), // Makes the button circular
+                                  shape: const CircleBorder(),
                                 ),
                                 child: const Icon(Icons.remove, size: 20),
                               ),

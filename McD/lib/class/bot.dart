@@ -14,7 +14,6 @@ class Bot {
   void start(List<Order> pendingOrders) async {
     while (_isActive) {
       if (pendingOrders.isNotEmpty) {
-        // Safely reserve an order
         final order = pendingOrders.removeAt(0);
         processingOrderNotifier.value = order;
         remainingSecondsNotifier.value = 10;
@@ -31,7 +30,6 @@ class Bot {
           remainingSecondsNotifier.value = null;
         }
       } else {
-        // Wait for new orders
         await Future.delayed(const Duration(milliseconds: 500));
       }
     }
