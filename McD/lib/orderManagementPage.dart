@@ -54,10 +54,14 @@ class _OrderManagementPageState extends State<OrderManagementPage> {
         Bot bot = bots.removeLast();
         if (bot.processingOrderNotifier.value != null) {
           final returnedOrder = bot.processingOrderNotifier.value!;
-          int lastVipIndex =
-          pendingOrders.lastIndexWhere((order) => order.role == "vip");
-          int insertIndex = lastVipIndex + 1;
-          pendingOrders.insert(insertIndex, returnedOrder);
+
+          if (returnedOrder.role == "vip") {
+            int lastVipIndex = pendingOrders.lastIndexWhere((order) => order.role == "vip");
+            int insertIndex = lastVipIndex + 1;
+            pendingOrders.insert(insertIndex, returnedOrder);
+          } else {
+            pendingOrders.add(returnedOrder);
+          }
         }
         bot.stop();
       });
